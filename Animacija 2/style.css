@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #050210;
+}
+
+.circle {
+  width: 360px;
+  height: 360px;
+  background-color: #050210;
+  position: relative;
+  margin: auto;
+  border-radius: 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.circle-inner {
+  width: 360px;
+  height: 360px;
+  background-color: #050210;
+  border-radius: 50%;
+  padding: 20px;
+  animation: anime-beg 1s infinite linear;
+}
+
+.circle::before {
+  position: absolute;
+  content: "";
+  height: 110%;
+  width: 110%;
+  background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+  z-index: -1;
+  border-radius: 50%;
+  left: -17px;
+  top: -17px;
+  box-shadow: 8px 8px 30px #fb5dad, -8px 8px 30px #55fb9f, 8px -8px 30px #b97aff;
+  animation: anim 1.5s infinite linear;
+}
+
+@keyframes anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes anime-beg {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(187, 187, 187, 0.13);
+  }
+  50% {
+    transform: scale(0.5);
+    background-color: rgba(187, 187, 187, 0.13);
+  }
+  100% {
+    transform: scale(1);
+    background-color: #050210;
+  }
+}
